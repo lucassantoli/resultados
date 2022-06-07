@@ -1,6 +1,13 @@
 <template>
   <div id="home">
     <div class="container">
+      <button class="refresh" @click="reload">
+        <svg width="23" height="23">
+          <path
+            d="M2 12C2 16.97 6.03 21 11 21C13.39 21 15.68 20.06 17.4 18.4L15.9 16.9C14.63 18.25 12.86 19 11 19C4.76 19 1.64 11.46 6.05 7.05C10.46 2.64 18 5.77 18 12H15L19 16H19.1L23 12H20C20 7.03 15.97 3 11 3C6.03 3 2 7.03 2 12Z"
+          />
+        </svg>
+      </button>
       <h1>Resultado</h1>
       <h2>{{ $config["nome"] }}</h2>
 
@@ -41,6 +48,9 @@ export default {
   }),
 
   methods: {
+    reload: function () {
+      window.location.reload(true);
+    },
     revelResult: function () {
       this.clicked = true;
       this.selectedMatricula = this.matricula.toString();
@@ -110,6 +120,20 @@ body * {
   width: 100%;
   background: #080352;
   margin: 2rem 0;
+}
+
+#home .container .refresh {
+  border: none;
+  display: flex;
+  padding: 0.25rem;
+  border-radius: 4px;
+  position: absolute;
+  background: #d32123;
+  cursor: pointer;
+}
+
+#home .container .refresh svg {
+  fill: white;
 }
 
 #home .container h2,

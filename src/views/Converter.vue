@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="converter">
     <div class="container">
       <h1>Preparando a planilha</h1>
 
@@ -97,7 +97,7 @@ body * {
   color: white;
   font-family: "Secular One", sans-serif;
 }
-#home {
+#converter {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -107,24 +107,24 @@ body * {
   width: 400px;
 }
 
-#home img {
+#converter img {
   max-width: 200px;
 }
 
-#home .hr {
+#converter .hr {
   height: 2px;
   width: 100%;
   background: #080352;
   margin: 2rem 0;
 }
 
-#home .container h2,
-#home .container h1 {
+#converter .container h2,
+#converter .container h1 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-#home .container .inputs {
+#converter .container .inputs {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -132,11 +132,11 @@ body * {
   width: 100%;
 }
 
-#home .container .inputs input {
+#converter .container .inputs input {
   color: white;
 }
 
-#home .container .inputs button {
+#converter .container .inputs button {
   background: #d32123;
   color: white;
   margin-top: 1rem;
@@ -144,20 +144,20 @@ body * {
   cursor: pointer;
 }
 
-#home .container .inputs button,
-#home .container .inputs input {
+#converter .container .inputs button,
+#converter .container .inputs input {
   width: 100%;
   border-radius: 0.25rem;
   box-sizing: border-box;
   border: none;
 }
 
-#home .container .inputs small {
+#converter .container .inputs small {
   color: #ddd;
   margin-top: 0.25rem;
 }
 
-#home .container .selected {
+#converter .container .selected {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -168,13 +168,13 @@ body * {
   padding: 1rem;
 }
 
-#home .container .selected p {
+#converter .container .selected p {
   color: black;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-#home .container .selected p.special {
+#converter .container .selected p.special {
   color: #d32123;
 }
 </style>
