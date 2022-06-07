@@ -8,8 +8,8 @@ import VueCryptojs from "vue-cryptojs";
 
 Vue.use(VueCryptojs);
 
-const configDir = "/config.json";
-const planilhaDir = "/planilha.json";
+const configDir = "/resultados/config.json";
+const planilhaDir = "/resultados/planilha.json";
 
 fetch(configDir)
   .then((res) => res.json())
