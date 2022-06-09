@@ -1,37 +1,12 @@
 <template>
-  <div id="home">
+  <div id="not-found">
     <div class="container">
-      <h1>Resultados</h1>
+      <h3>Não temos resultado dessa competição ainda</h3>
       <br />
-      <h3>Selecione um resultado para ver</h3>
-      <div class="opcoes">
-        <a
-          v-for="(olimpiada, index) in olimpiadas"
-          :key="index"
-          v-text="olimpiada.nome"
-          :href="`#/${olimpiada.rota}`"
-        ></a>
-      </div>
+      <a href="/">Volte ao início</a>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: "Home",
-
-  data: () => ({
-    olimpiadas: [],
-  }),
-
-  mounted() {
-    this.olimpiadas = this.$config.resultados.map((resultado) => ({
-      nome: resultado.nome,
-      rota: resultado.id,
-    }));
-  },
-};
-</script>
 
 <style>
 body {
@@ -45,7 +20,7 @@ body * {
   color: white;
   font-family: "Secular One", sans-serif;
 }
-#home {
+#not-found {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -54,18 +29,13 @@ body * {
   width: 400px;
 }
 
-#home .container h2,
-#home .container h1 {
+#not-found .container h2,
+#not-found .container h1 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-#home .container .opcoes {
-  display: flex;
-  flex-direction: column;
-}
-
-#home .container .opcoes a {
+#not-found .container a {
   text-decoration: none;
   font-size: 13.333px;
   width: 100%;

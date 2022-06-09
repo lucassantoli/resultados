@@ -5,14 +5,24 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: () => import(/* webpackChunkName: "about" */ "@/views/Home.vue"),
-  },
-  {
     path: "/converter",
     name: "Converter",
-    component: () => import(/* webpackChunkName: "about" */ "@/views/Converter.vue"),
+    component: () => import("@/views/Converter.vue"),
+  },
+  {
+    path: "/404",
+    name: "404",
+    component: () => import("@/views/NotFound.vue"),
+  },
+  {
+    path: "/",
+    name: "Home",
+    component: () => import("@/views/Home.vue"),
+  },
+  {
+    path: "/:olimpiada",
+    name: "Olimpiada",
+    component: () => import("@/views/Olimpiada.vue"),
   },
 ];
 

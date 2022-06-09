@@ -1,5 +1,16 @@
 {
-  "nome": "Olimpíada Canguru",
-  "chave": "MATRÍCULA",
-  "destaque": ["PREMIAÇÃO", "COLOCAÇÃO"]
+  "resultados": [
+    {
+      "id": "canguru",
+      "nome": "Olimpíada Canguru",
+      "chave": "MATRÍCULA",
+      "destaque": ["PREMIAÇÃO", "COLOCAÇÃO"]
+    },
+    {
+      "id": "obi",
+      "nome": "Olimpíada de Informática",
+      "chave": "MATRÍCULA",
+      "destaque": ["PREMIAÇÃO", "COLOCAÇÃO"]
+    }
+  ]
 }
