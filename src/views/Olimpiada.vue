@@ -4,13 +4,13 @@
       <h1>Resultados</h1>
       <h2 v-text="dados.nome"></h2>
 
-      <form @submit="revelResult" class="inputs">
+      <form @submit.prevent="revelResult" class="inputs">
         <label for="matricula">{{ getChave }}</label>
         <input type="text" id="matricula" v-model="matricula" />
         <small v-if="clicked && !matricula">Por favor, preencha o campo acima</small>
         <small v-else>&nbsp;</small>
 
-        <input hidden />
+        <input type="submit" hidden />
         <button type="submit">Ver resultado</button>
         <button
           class="dark"
@@ -50,9 +50,6 @@ export default {
   }),
 
   methods: {
-    reload: function () {
-      window.location.reload(true);
-    },
     revelResult: function () {
       this.clicked = true;
       this.selectedMatricula = this.matricula.toString();
@@ -130,8 +127,6 @@ body * {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  max-width: 400px;
-  width: 400px;
 }
 
 #olimpiada img {
