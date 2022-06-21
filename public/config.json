@@ -1,16 +1,47 @@
 {
-  "resultados": [
-    {
-      "id": "canguru",
-      "nome": "Olimpíada Canguru",
-      "chave": "MATRÍCULA",
-      "destaque": ["PREMIAÇÃO", "COLOCAÇÃO"]
-    },
-    {
-      "id": "obi",
-      "nome": "Olimpíada de Informática",
-      "chave": "MATRÍCULA",
-      "destaque": ["PREMIAÇÃO", "COLOCAÇÃO"]
-    }
-  ]
+	"resultados": [
+		
+		{
+			"id": "canguru",
+			"nome": "CANGURU DE MATEMÁTICA",
+			"chave": "MATRÍCULA",
+			"destaque": ["- LUGAR", "- PONTOS", "- PREMIAÇÃO"]
+		},		
+		
+		{
+			"id": "obmep_final",
+			"nome": "OBMEP - 1ª FASE",
+			"chave": "MATRÍCULA",
+			"destaque": ["- LUGAR", "- PONTOS (máx. 20)", "- STATUS"]
+		},
+		
+		{
+			"id": "oba_notas",
+			"nome": "OBA - NOTAS",
+			"chave": "MATRÍCULA",
+			"destaque": ["- LUGAR", "- NOTA (máx. 10)"]
+		},
+		
+		{
+			"id": "obr_notas",
+			"nome": "OBR - NOTAS",
+			"chave": "MATRÍCULA",
+			"destaque": ["- LUGAR", "- NOTA (máx. 100)", "- STATUS"]
+		},
+
+		{
+			"id": "obi_p_fase1",
+			"nome": "OBI (PROGRAMAÇÃO) - 1ª FASE",
+			"chave": "MATRÍCULA",
+			"destaque": ["- LUGAR", "- PONTOS", "- STATUS"]
+		},
+
+		{
+			"id": "obi_notas",
+			"nome": "OBI (INICIAÇÃO) - NOTAS",
+			"chave": "MATRÍCULA",
+			"destaque": ["- LUGAR", "- PONTOS (máx . 15)", "- STATUS"]
+		}	
+		
+	]
 }

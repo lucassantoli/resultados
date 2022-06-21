@@ -1,17 +1,14 @@
 <template>
-  <div id="home">
-    <div class="container">
-      <h1>Resultados</h1>
-      <br />
-      <h3>Selecione um resultado para ver</h3>
-      <div class="opcoes">
-        <a
-          v-for="(olimpiada, index) in olimpiadas"
-          :key="index"
-          v-text="olimpiada.nome"
-          :href="`#/${olimpiada.rota}`"
-        ></a>
-      </div>
+  <div id="home" class="container">
+    <p>Selecione uma competição<br />para ver os resultados disponíveis</p>
+
+    <div class="opcoes">
+      <a
+        v-for="(olimpiada, index) in olimpiadas"
+        :key="index"
+        v-text="olimpiada.nome"
+        :href="`#/${olimpiada.rota}`"
+      ></a>
     </div>
   </div>
 </template>
@@ -33,47 +30,31 @@ export default {
 };
 </script>
 
-<style>
-body {
-  background: #1f1b5f;
+<style lang="scss">
+#home {
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
-}
-body * {
-  color: white;
-  font-family: "Secular One", sans-serif;
-}
-#home {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  gap: 2rem;
 
-#home .container h2,
-#home .container h1 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+  p {
+    font-weight: 400;
+  }
 
-#home .container .opcoes {
-  display: flex;
-  flex-direction: column;
-}
+  .opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
 
-#home .container .opcoes a {
-  text-decoration: none;
-  font-size: 13.333px;
-  width: 100%;
-  border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
-  box-sizing: border-box;
-  border: none;
-  background: #d32123;
-  color: white;
-  margin-top: 1rem;
-  cursor: pointer;
+    a {
+      background: white;
+      color: #fb0010;
+      text-decoration: none;
+      padding: 1rem;
+      border-radius: 0.4rem;
+    }
+  }
 }
 </style>
