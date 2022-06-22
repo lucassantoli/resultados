@@ -1,19 +1,15 @@
 <template>
-  <div id="converter">
-    <div class="container">
-      <h1>Preparando a planilha</h1>
+  <div id="converter" class="container">
+    <h1>Preparando a planilha</h1>
 
-      <div class="inputs">
-        <label for="matricula">Sua planilha:</label>
-        <input type="file" id="arquivo" @change="uploadFile" ref="file" />
-        <br />
-        <label for="matricula">Coluna chave</label>
-        <input type="text" id="matricula" v-model="chave" />
+    <div class="inputs">
+      <label for="matricula">Sua planilha:</label>
+      <input type="file" id="arquivo" @change="uploadFile" ref="file" />
+      <br />
+      <label for="matricula">Coluna chave</label>
+      <input type="text" id="matricula" v-model="chave" />
 
-        <button @click="converter">Obter JSON</button>
-
-        <p>Insira esse JSON na raiz do projeto, na mesma pasta onde está o arquivo "index.html"</p>
-      </div>
+      <button @click="converter">Obter JSON</button>
     </div>
   </div>
 </template>
@@ -71,7 +67,10 @@ export default {
             secret.toString()
           ).toString();
         }
-        newAluno.check = this.$CryptoJS.AES.encrypt("coesi", secret.toString()).toString();
+        newAluno.check = this.$CryptoJS.AES.encrypt(
+          "coesi",
+          secret.toString()
+        ).toString();
         data.push(newAluno);
       }
 
@@ -91,99 +90,6 @@ export default {
 };
 </script>
 
-<style>
-body {
-  background: #1f1b5f;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 1rem;
-}
-body * {
-  color: white;
-  font-family: "Secular One", sans-serif;
-}
-#converter {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#converter img {
-  max-width: 200px;
-}
-
-#converter .hr {
-  height: 2px;
-  width: 100%;
-  background: #080352;
-  margin: 2rem 0;
-}
-
-#converter .container h2,
-#converter .container h1 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-#converter .container .inputs {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: self-start;
-  width: 100%;
-}
-
-#converter .container .inputs input#arquivo {
-  color: white;
-}
-
-#converter .container .inputs input {
-  color: black;
-}
-
-#converter .container .inputs button {
-  background: #d32123;
-  color: white;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-#converter .container .inputs button,
-#converter .container .inputs input:not(#arquivo) {
-  width: 100%;
-  border-radius: 0.25rem;
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
-  border: none;
-}
-
-#converter .container .inputs small {
-  color: #ddd;
-  margin-top: 0.25rem;
-}
-
-#converter .container .selected {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  align-items: flex-start;
-  border-radius: 0.5rem;
-  background: white;
-  padding: 1rem;
-}
-
-#converter .container .selected p {
-  color: black;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-#converter .container .selected p.special {
-  color: #d32123;
-}
+<style lang="scss">
+@import "./Converter.scss";
 </style>

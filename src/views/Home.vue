@@ -31,30 +31,5 @@ export default {
 </script>
 
 <style lang="scss">
-#home {
-  padding-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-
-  p {
-    font-weight: 400;
-  }
-
-  .opcoes {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-
-    a {
-      background: white;
-      color: #fb0010;
-      text-decoration: none;
-      padding: 1rem;
-      border-radius: 0.4rem;
-    }
-  }
-}
+@import "./Home.scss";
 </style>

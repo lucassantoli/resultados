@@ -1,0 +1,42 @@
+@import "@/global.scss";
+
+#converter.container {
+  width: 100%;
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    width: 100%;
+
+    input#arquivo {
+      color: white;
+    }
+
+    input {
+      color: $dark-blue;
+    }
+
+    button {
+      background: $red;
+      color: white;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    button,
+    input:not(#arquivo) {
+      width: 100%;
+      border-radius: 0.25rem;
+      box-sizing: border-box;
+      padding: 0.5rem 1rem;
+      border: none;
+    }
+
+    small {
+      color: white;
+      margin-top: 0.25rem;
+    }
+  }
+}

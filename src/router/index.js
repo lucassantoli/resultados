@@ -22,7 +22,7 @@ const routes = [
   {
     path: "/:olimpiada",
     name: "Olimpiada",
-    component: () => import("@/views/Olimpiada.vue"),
+    component: () => import("@/views/Olympiad.vue"),
   },
 ];
 
