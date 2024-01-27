@@ -8,11 +8,7 @@ import VueCryptojs from "vue-cryptojs";
 
 Vue.use(VueCryptojs);
 
-Vue.prototype.$baseURL = process.env.NODE_ENV === "production" ? "/resultados/" : "";
-const configDir =
-  process.env.NODE_ENV === "production"
-    ? "/resultados/config.json?nocache=" + new Date().getDate()
-    : "/config.json?nocache=" + new Date().getDate();
+const configDir = "/config.json?nocache=" + new Date().getDate();
 
 fetch(configDir)
   .then((res) => res.json())

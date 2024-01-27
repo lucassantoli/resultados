@@ -10,10 +10,10 @@
     color: white;
     font-size: 1.5rem;
     line-height: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     padding: 1rem;
     width: fit-content;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
 
   form {
@@ -31,17 +31,17 @@
       width: 100%;
       gap: 1rem;
       display: grid;
-      grid-template-columns: 4fr 2fr 1fr;
+      grid-template-columns: 4fr 2fr;
 
       input {
-        padding: 0.4rem 0.5rem;
+        padding: .85rem 0.5rem;
         border-radius: 0.3rem;
         color: black;
-        font-weight: 300;
+        font-weight: 700;
         border: none;
         width: inherit;
       }
-
+      
       button {
         border: none;
         border-radius: 0.3rem;
@@ -49,10 +49,10 @@
       }
 
       button.search {
-        background-color: $light-blue;
+        background-color: $red;
       }
       button.back {
-        background-color: $red;
+        background-color: $light-blue;
       }
 
       button .icon {
@@ -65,7 +65,7 @@
     background: white;
     border-radius: 0.4rem;
     padding: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 100%;
 
     .prop {
@@ -73,16 +73,42 @@
 
       p,
       strong {
-        font-family: "Roc Grotesk Condensed";
-        font-size: 1.4rem;
+        font-size: 1rem;
         color: $dark-blue;
         margin-bottom: 0;
         text-align: start;
+      }
+
+      p {
+        font-weight: 500;
+      }
+
+      strong {
+        font-weight: 800;
       }
     }
     .prop.special p,
     .prop.special strong {
       color: $red;
+    }
+  }
+
+  .obs {
+    background: white;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    
+    h3 {
+      color: $red;
+      font-weight: 800;
+    }
+
+    p {
+      color: $dark-blue;
+      text-align: start;
+      font-weight: 500;
     }
   }
 }

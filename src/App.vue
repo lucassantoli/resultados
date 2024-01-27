@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <img
-      class="joc"
-      src="@/assets/Logo JOC.png"
-      alt="Logotipo da Jornada Olímpica do Coesi"
+      class="tropa clickable"
+      src="@/assets/Logo Tropa.png"
+      alt="Logotipo da Tropa Olímpica MASTER"
+      @click="redirectToHome"
     />
 
     <router-view :key="$route.path" />
@@ -12,23 +13,29 @@
 
     <footer class="credits">
       <img
-        class="coesi"
-        src="@/assets/Logo Coesi.png"
-        alt="Logotipo do Coesi"
+        class="master"
+        src="@/assets/Logo Master.png"
+        alt="Logotipo do Master"
       />
-      <small>Desenvolvido por Lucas Santoli</small>
     </footer>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  methods: {
+    redirectToHome: function () {
+      this.$router.push('/')
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import "@/global.scss";
-@import "@/fonts.scss";
 
 * {
-  font-family: "Roc Grotesk", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html {
@@ -36,15 +43,18 @@ html {
 }
 
 body .wrapper {
+  position: absolute;
+  top: 0.1px;
+  left: 0;
+  right: 0;
+  bottom: 0.1px;
+  overflow-x: hidden; /* or any other value */
+  overflow-y: auto; /* or any other value */
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  background: url("./assets/Shape.png"), $dark-blue;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: auto 100vh;
-  background-position: 50% 0;
+  background: $dark-blue;
 }
 
 body * {
@@ -62,9 +72,9 @@ body * {
   flex-direction: column;
   align-items: center;
 
-  img.joc {
-    margin: 4rem 0;
-    max-width: min(60%, 480px);
+  img.tropa {
+    margin: 2rem 0;
+    max-width: min(30%, 250px);
   }
 
   .spacer {
@@ -76,10 +86,11 @@ body * {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    padding: 6rem 0 3rem 0;
+    padding: 3rem 0 1rem 0;
 
-    img.coesi {
-      max-width: min(35%, 295px);
+    img.master {
+      margin: 2rem 0;
+      max-width: min(50%, 420px);
     }
 
     small {

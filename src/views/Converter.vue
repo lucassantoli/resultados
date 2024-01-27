@@ -68,7 +68,7 @@ export default {
           ).toString();
         }
         newAluno.check = this.$CryptoJS.AES.encrypt(
-          "coesi",
+          "master",
           secret.toString()
         ).toString();
         data.push(newAluno);

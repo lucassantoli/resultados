@@ -2,46 +2,109 @@
 	"resultados": [
 		
 		{
-			"id": "canguru",
-			"nome": "CANGURU DE MATEMÁTICA",
-			"chave": "- MATRÍCULA",
-			"destaque": ["- LUGAR", "- PONTOS", "- PREMIAÇÃO"]
-		},		
-		
-		{
-			"id": "obmep_final",
-			"nome": "OBMEP - 1ª FASE",
-			"chave": "- MATRÍCULA",
-			"destaque": ["- LUGAR", "- PONTOS (máx. 20)", "- STATUS"]
+			"id": "resultado_oba",
+			"nome": "OBA : OLIMPÍADA BRASILEIRA DE ASTRONOMIA",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "NOTA", "PREMIAÇÃO"],
+			"obs": [
+				  ":: As medalhas e certificados costumam chegar no último bimestre do ano.",
+				  ":: As notas mínimas para premiação foram: N2 (9,2), N3 (8,4) e N4 (7,6).",
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível."
+			       ]
 		},
-		
 		{
-			"id": "oba_notas",
-			"nome": "OBA - NOTAS",
-			"chave": "- MATRÍCULA",
-			"destaque": ["- LUGAR", "- NOTA (máx. 10)"]
+			"id": "notas_obmep",
+			"nome": "OBMEP : OLIMPÍADA BRASILEIRA DE MATEMÁTICA DAS ESCOLAS PÚBLICAS E PRIVADAS",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "PONTUAÇÃO (máx. 20)", "STATUS"],
+			"obs": [
+				  ":: As notas de corte foram: N1 (12 pts), N2 (12 pts) e N3 (14 pts).",
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível.",
+				  ":: Para 'classificados', entraremos em contato para mais informações."
+			       ]
 		},
-		
 		{
-			"id": "obr_notas",
-			"nome": "OBR - NOTAS",
-			"chave": "- MATRÍCULA",
-			"destaque": ["- LUGAR", "- NOTA (máx. 100)", "- STATUS"]
+			"id": "resultado_obi",
+			"nome": "OBI : OLIMPÍADA BRASILEIRA DE INFORMÁTICA (INICIAÇÃO) - FASE 1",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "PONTUAÇÃO", "STATUS"],
+			"obs": [
+				  ":: As notas de corte foram: IJ (6 pts), I1 (8 pts) e I2 (11 pts).",
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível."
+			       ]
 		},
-
 		{
-			"id": "obi_p_fase1",
-			"nome": "OBI (PROGRAMAÇÃO) - 1ª FASE",
-			"chave": "- MATRÍCULA",
-			"destaque": ["- LUGAR", "- PONTOS", "- STATUS"]
+			"id": "resultado_canguru",
+			"nome": "OLIMPÍADA CANGURU DE MATEMÁTICA",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "NOTA", "PREMIAÇÃO"],
+			"obs": [
+				  ":: As medalhas e certificados costumam chegar no 2º semestre.",
+				  ":: As notas mínimas para premiação foram: P (80), E (68,75), B (75,25), C (63,75), J (62,25) e S (57).",
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível."
+			       ]
 		},
-
 		{
-			"id": "obi_notas",
-			"nome": "OBI (INICIAÇÃO) - NOTAS",
-			"chave": "- MATRÍCULA",
-			"destaque": ["- LUGAR", "- PONTOS (máx . 15)", "- STATUS"]
-		}	
-		
+			"id": "resultado_osequim",
+			"nome": "OSEQUIM : OLIMPÍADA SERGIPANA DE QUÍMICA",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "PONTUAÇÃO", "STATUS"],
+			"obs": [
+				  ":: A nota mínima para classificação foi 12/25 pontos para todos os níveis.",
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível.",
+				  ":: Para os classificados, a prova da 2ª fase será realizada no dia 22 de julho, mais informações no App Master."				
+			       ]
+		},
+		{
+			"id": "resultado_obr",
+			"nome": "OBR : OLIMPÍADA BRASILEIRA DE ROBÓTICA (TEÓRICA)",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "PONTUAÇÃO", "PREMIAÇÃO"],
+			"obs": [
+				  ":: Caso não apareça 'premiação' nos seus dados acima, é porque dessa vez o aluno não conquistou uma.",
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível."
+			       ]
+		},
+		{
+			"id": "resultado_obi_f2",
+			"nome": "OBI : OLIMPÍADA BRASILEIRA DE INFORMÁTICA (INICIAÇÃO) - FASE 2",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "PONTUAÇÃO", "STATUS"],
+			"obs": [
+				  ":: As notas de corte foram: IJ (8 pts), I1 (13 pts) e I2 (16 pts).",
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível."
+			       ]
+		},
+		{
+			"id": "resultado_mirim_f1",
+			"nome": "OLIMPÍADA MIRIM DE MATEMÁTICA (OBMEP) - FASE 1",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "PONTUAÇÃO (máx. 15)", "STATUS"],
+			"obs": [
+				  ":: A nota de corte foi de 11 pts.",
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível.",
+				  ":: Para 'classificados', entraremos em contato para mais informações."
+			       ]
+		},
+		{
+			"id": "resultado_onc_f1",
+			"nome": "ONC : OLIMPÍADA NACIONAL DE CIÊNCIAS",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "PONTUAÇÃO (máx. 20)", "STATUS"],
+			"obs": [
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível.",
+				  ":: Para 'classificados', entraremos em contato para mais informações."
+			       ]
+		},
+		{
+			"id": "resultado_obrl_f1",
+			"nome": "OBRL : OLIMPÍADA BRASILEIRA DE RACIOCÍNIO LÓGICO - FASE 1",
+			"chave": "MATRÍCULA",
+			"destaque": ["POSIÇÃO", "PONTUAÇÃO (máx. 10)", "STATUS"],
+			"obs": [
+				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível.",
+				  ":: Para 'classificados', entraremos em contato para mais informações."
+			       ]
+		}
 	]
 }

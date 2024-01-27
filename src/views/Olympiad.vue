@@ -3,21 +3,13 @@
     <h2 v-text="dados.nome" class="olympiad-name"></h2>
 
     <form @submit.prevent="revealResult">
-      <label for="key">Qual sua matrícula?</label>
+      <label for="key">Qual a sua matrícula?</label>
 
       <div class="grid">
         <input type="number" id="key" v-model="key" />
 
         <button type="submit" class="search">
           <img class="icon" src="@/assets/icon_lupa.png" alt="Ícone de lupa" />
-        </button>
-
-        <button class="back" type="button" @click="goToHome">
-          <img
-            class="icon"
-            src="@/assets/icon_backarrow.png"
-            alt="Ícone de uma seta retrocedendo"
-          />
         </button>
       </div>
 
@@ -37,6 +29,12 @@
           <strong>{{ prop.key }}:</strong> {{ prop.value }}
         </p>
       </div>
+    </div>
+
+    <div class="obs" v-if="dados.obs">
+      <h3>OBSERVAÇÕES</h3>
+      <p v-text="dados.obs" v-if="isObsString"></p>
+      <p v-else v-for="(obs, index) in dados.obs" v-text="obs" :key="index"></p>
     </div>
   </div>
 </template>
@@ -64,7 +62,7 @@ export default {
             student["check"].toString(),
             this.key.toString()
           ).toString(this.CryptoJS.enc.Utf8);
-          return decrypted === "coesi";
+          return decrypted === "master";
         } catch {
           return false;
         }
@@ -79,11 +77,16 @@ export default {
   },
 
   computed: {
+    isObsString: function () {
+      console.log(typeof this.dados.obs);
+      return (typeof this.dados.obs === "string");
+    },
+
     showSelected: function () {
       const secret = this.selectedKey;
       return Object.keys(this.selected)
         .map((key) => ({
-          key: key.startsWith("- ") ? key : "- " + key,
+          key,
           value: this.$CryptoJS.AES.decrypt(
             this.selected[key].toString(),
             secret
@@ -96,7 +99,7 @@ export default {
           return condA === condB ? 0 : condA ? -1 : 1;
         })
         .filter((res) => {
-          return res.key != "- check" && res.key != this.dados.chave;
+          return res.key != "check" && res.key != this.dados.chave;
         });
     },
 
@@ -119,7 +122,7 @@ export default {
     }
 
     fetch(
-      `${this.$baseURL}/resultados/${olimpiada}.json?nocache=` +
+      `/resultados/${olimpiada}.json?nocache=` +
         new Date().getDate()
     )
       .then((res) => res.json())
