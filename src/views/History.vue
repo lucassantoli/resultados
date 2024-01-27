@@ -21,20 +21,36 @@
     </div>
     <div class="selected" v-else-if="selected">
       <div
-        v-for="(prop, index) in showSelected"
+        v-for="(prop, index) in finalObj"
         :key="index"
-        :class="['prop', dados.destaque.includes(prop.key) ? 'special' : '']"
+        :class="['prop']"
       >
         <p>
           <strong>{{ prop.key }}:</strong> {{ prop.value }}
         </p>
+      </div>
+
+      <div
+        v-for="(history_unit, index) in history"
+        :key="index"
+        :class="['history']"
+      >
+        <div
+          v-for="(prop, index) in history_unit"
+          :key="index"
+          :class="['prop']"
+        >
+          <p>
+            <strong>{{ prop.key }}:</strong> {{ prop.value }}
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="--obs" v-if="dados.obs">
       <h3>OBSERVAÇÕES</h3>
       <p v-text="dados.obs" v-if="isObsString"></p>
-      <p v-else v-for="(obs, index) in dados.obs" v-text="obs" :key="index"></p>
+      <p v-else v-for="(obs, index) in dados.obs" v-html="obs" :key="index"></p>
     </div>
   </div>
 </template>
@@ -50,6 +66,8 @@ export default {
     clicked: false,
     selected: null,
     displayNotFound: false,
+    finalObj: {},
+    history: [],
   }),
 
   methods: {
@@ -57,9 +75,12 @@ export default {
       this.clicked = true;
       this.selectedKey = this.key.toString();
       this.selected = this.planilha.find((student) => {
+        if (!student) return false;
+        const { secret, check } = student[0];
+        if (!secret || !check) return false;
         try {
           const decrypted = this.$CryptoJS.AES.decrypt(
-            student["check"].toString(),
+            check.toString(),
             this.key.toString()
           ).toString(this.CryptoJS.enc.Utf8);
           return decrypted === "master";
@@ -69,38 +90,61 @@ export default {
       });
 
       this.displayNotFound = this.selected == null;
+
+      if (!this.displayNotFound) {
+        this.computeSelected();
+      }
     },
 
     goToHome: function () {
       this.$router.push("/");
     },
+
+    computeSelected: function () {
+      const secret = this.selectedKey;
+      const selecteds = [];
+
+      for (const entry of this.selected[1]) {
+        const decryptedEntry = Object.keys(entry)
+        .map((key) => ({
+          key,
+          value: this.$CryptoJS.AES.decrypt(
+            entry[key].toString(),
+            secret
+          ).toString(this.CryptoJS.enc.Utf8),
+        }))
+        .filter((res) => {
+          return res.key != "check" && res.key != this.dados.chave;
+        });
+
+        selecteds.push(decryptedEntry);
+      }
+
+      const finalObj = {};
+      const history = []
+
+
+      for (const selected of selecteds) {
+        const historyObj = {};
+        for (const line of selected) {
+          if (this.dados.agrupar.includes(line.key)) {
+            historyObj[line.key] = line.value;
+          } else {
+            finalObj[line.key] ??= line.value;
+          }
+        }
+        history.push(historyObj)
+      }
+
+      this.finalObj = Object.entries(finalObj).map(([key, value]) => ({ key, value }));
+      this.history = history.map(h => Object.entries(h).map(([key, value]) => ({ key, value })));
+      console.log(this.history);
+    },
   },
 
   computed: {
     isObsString: function () {
-      console.log(typeof this.dados.obs);
       return (typeof this.dados.obs === "string");
-    },
-
-    showSelected: function () {
-      const secret = this.selectedKey;
-      return Object.keys(this.selected)
-        .map((key) => ({
-          key,
-          value: this.$CryptoJS.AES.decrypt(
-            this.selected[key].toString(),
-            secret
-          ).toString(this.CryptoJS.enc.Utf8),
-        }))
-        .sort((propA, propB) => {
-          const condA = this.dados.destaque.includes(propA.key);
-          const condB = this.dados.destaque.includes(propB.key);
-
-          return condA === condB ? 0 : condA ? -1 : 1;
-        })
-        .filter((res) => {
-          return res.key != "check" && res.key != this.dados.chave;
-        });
     },
 
     getKey: function () {
@@ -110,10 +154,10 @@ export default {
   },
 
   mounted() {
-    const olimpiada = this.$route.params.olimpiada;
+    const ano = this.$route.params.ano;
 
-    this.dados = this.$config.resultados.find(
-      (resultado) => resultado.id == olimpiada
+    this.dados = this.$config.historicos.find(
+      (resultado) => resultado.id == ano
     );
 
     if (this.dados == null) {
@@ -122,7 +166,7 @@ export default {
     }
 
     fetch(
-      `/resultados/${olimpiada}.json?nocache=` +
+      `/historicos/${ano}.json?nocache=` +
         new Date().getDate()
     )
       .then((res) => res.json())

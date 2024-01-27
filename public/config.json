@@ -1,6 +1,5 @@
 {
 	"resultados": [
-		
 		{
 			"id": "resultado_oba",
 			"nome": "OBA : OLIMPÍADA BRASILEIRA DE ASTRONOMIA",
@@ -105,6 +104,18 @@
 				  ":: Caso apareça 'posição' nos seus dados acima, é apenas uma posição escolar, por nível.",
 				  ":: Para 'classificados', entraremos em contato para mais informações."
 			       ]
+		}
+	],
+	"historicos": [
+		{
+			"id": "2023",
+			"nome": "Histórico 2023",
+			"chave": "MATRÍCULA",
+			"agrupar": ["OLIMPÍADA", "PREMIAÇÃO"], 
+			"obs": [
+				  ":: Se está faltando alguma premiação ou alguma está errada nessa lista, acesse o formulário abaixo e preencha de acordo com a solicitação necessária:",
+				  ":: <a href=\"https://google.com\" target=\"_blank\">https://google.com</a>"
+			]
 		}
 	]
 }

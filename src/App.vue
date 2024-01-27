@@ -35,7 +35,7 @@ export default {
 @import "@/global.scss";
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {

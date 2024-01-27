@@ -10,6 +10,11 @@ const routes = [
     component: () => import("@/views/Converter.vue"),
   },
   {
+    path: "/converterhistorico",
+    name: "ConverterHistory",
+    component: () => import("@/views/ConverterHistory.vue"),
+  },
+  {
     path: "/404",
     name: "404",
     component: () => import("@/views/NotFound.vue"),
@@ -23,6 +28,11 @@ const routes = [
     path: "/:olimpiada",
     name: "Olimpiada",
     component: () => import("@/views/Olympiad.vue"),
+  },
+  {
+    path: "/historico/:ano",
+    name: "Historico",
+    component: () => import("@/views/History.vue"),
   },
 ];
 
