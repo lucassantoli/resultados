@@ -17,7 +17,7 @@
     </form>
 
     <div class="not-found" v-if="displayNotFound" style="margin-top: 1rem">
-      <h4>Não conseguimos encontrar nenhum resultado para esta matrícula</h4>
+      <h4>Não conseguimos encontrar nenhum resultado para esta matrícula </h4>
     </div>
     <div class="selected" v-else-if="selected">
       <div
